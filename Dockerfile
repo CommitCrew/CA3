@@ -1,3 +1,4 @@
+
 FROM python:3.10
 ENV USERNAME = commitcrew
 RUN mkdir -p /home/dockerdemo
@@ -7,3 +8,4 @@ WORKDIR /home/dockerdemo
 RUN pip install -r requirements.txt
 RUN pip install flask
 CMD ['python','test.py']
+
