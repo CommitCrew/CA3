@@ -1,5 +1,6 @@
 from flask import Flask
 from multiplycalc import multiply
+from subtractftn import subtract
 from hello import add
 app = Flask(__name__)
 
@@ -15,6 +16,11 @@ def multiply_route(x, y):
 @app.route('/add/<int:x>/<int:y>')
 def add_route(x,y):
     result = add(x,y)
+    return str(result)
+
+@app.route('/subtract/<int:x>/<int:y>')
+def subtract_route(x, y):
+    result = subtract(x, y)
     return str(result)
 
 if __name__ == '__main__':
