@@ -1,10 +1,16 @@
 from flask import Flask
+from multiplycalc import multiply
 from hello import add
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'Welcome to the Calculator App!'
+    return "Welcome to the Calculator App!"
+
+@app.route('/multiply/<int:x>/<int:y>')
+def multiply_route(x, y):
+    result = multiply(x, y)
+    return str(result)
 
 @app.route('/add/<int:x>/<int:y>')
 def add_route(x,y):
