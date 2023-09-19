@@ -1,11 +1,14 @@
 20I-0579
 Implemented Multiply function for the calculator app. Made a branch named "i200579".
 Pushed the files onto their branch.
+Created dockerhub account
 
 20I-0603
 Implemented Add function for the calculator app. Made a branch named "i200603".
 Pushed the files onto their branch.
+Created new github account
 
 20I-0711
 Implemented Subtraction function for the calculator app. Made a branch named "i200711".
 Pushed the files onto their branch.
+Created docker image and container and pushed it onto github and dockerhub
