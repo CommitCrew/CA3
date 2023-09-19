@@ -7,5 +7,5 @@ EXPOSE 5000
 WORKDIR /home/dockerdemo
 RUN pip install -r requirements.txt
 RUN pip install flask
-CMD ['python','test.py']
+CMD ["python","test.py"]
 
