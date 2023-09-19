@@ -1,5 +1,4 @@
 from calculator import app
-from calculator import app
 from flask import jsonify
 
 def test_add():
@@ -11,3 +10,8 @@ def test_multiply():
     with app.test_client() as client:
         response = client.get('/multiply/2/3')
         assert response.get_data(as_text=True) == "6"
+
+def test_subtract():
+    with app.test_client() as client:
+        response = client.get('/subtract/6/3')
+        assert response.get_data(as_text=True) == '3'
