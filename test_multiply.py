@@ -1,4 +1,6 @@
-from multiply import multiply
-
+from calculator import app
+from flask import jsonify
 def test_multiply():
-    assert 4 == multiply(2,2)
+    with app.test_client() as client:
+        response = client.get('/multiply/2/3')
+        assert response.get_data(as_text=True) == "6"

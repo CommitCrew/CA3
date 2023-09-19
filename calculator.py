@@ -1,5 +1,5 @@
 from flask import Flask
-from multiply import multipy
+from multiplycalc import multiply
 app = Flask(__name__)
 
 @app.route('/')
@@ -9,8 +9,8 @@ def home():
 @app.route('/multiply/<int:x>/<int:y>')
 
 def multiply_route(x, y):
-    result = multipy(x, y)
-    return f"The result of {x} * {y} is {result}"
+    result = multiply(x, y)
+    return str(result)
 
 if __name__ == '__main__':
     app.run(debug=True)
