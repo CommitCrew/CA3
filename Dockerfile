@@ -1,5 +1,5 @@
 FROM python:3.10
-ENV USERNAME commitcrew
+ENV USERNAME=commitcrew
 RUN mkdir -p /home/dockerdemo
 WORKDIR /home/dockerdemo
 COPY . /home/dockerdemo

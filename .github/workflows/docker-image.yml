@@ -1,0 +1,50 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build -t commitcrew/ca3:latest .  
+
+To configure your GitHub Actions YAML file (docker-image-ci.yml) so that it not only builds the Docker image but also runs the container, you can add the necessary steps in your workflow. Below is an updated version of your YAML file:
+
+yaml
+Copy code
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build the Docker image
+      run: |
+        docker build -t commitcrew/ca3:latest .
+        docker images  # Optional: List Docker images for verification
+
+    - name: Run Docker container
+      run: |
+        docker run -p 8080:5000 commitcrew/ca3:latest
