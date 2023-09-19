@@ -1,0 +1,11 @@
+20I-0579
+Implemented Multiply function for the calculator app. Made a branch named "i200579".
+Pushed the files onto their branch.
+
+20I-0603
+Implemented Add function for the calculator app. Made a branch named "i200603".
+Pushed the files onto their branch.
+
+20I-0711
+Implemented Subtraction function for the calculator app. Made a branch named "i200711".
+Pushed the files onto their branch.

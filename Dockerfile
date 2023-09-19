@@ -1,11 +1,9 @@
-
 FROM python:3.10
-ENV USERNAME = commitcrew
+ENV USERNAME commitcrew
 RUN mkdir -p /home/dockerdemo
+WORKDIR /home/dockerdemo
 COPY . /home/dockerdemo
 EXPOSE 5000
-WORKDIR /home/dockerdemo
-RUN pip install -r requirements.txt
 RUN pip install flask
-CMD ['python','test.py']
-
+RUN pip install --no-cache-dir -r requirements.txt
+CMD ["python","calculator.py"]
