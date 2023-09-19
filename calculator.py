@@ -1,5 +1,5 @@
 from flask import Flask
-from CA3.hello import add
+from hello import add
 app = Flask(__name__)
 
 @app.route('/')

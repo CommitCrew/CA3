@@ -1,4 +1,6 @@
-from app import add
+from calculator import app
 
 def test_add():
-    assert 5 == add(3,2)
+    with app.test_client() as client:
+        response = client.get('/add/4/2')
+        assert response.get_data(as_text=True) == '6'
