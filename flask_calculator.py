@@ -9,7 +9,7 @@ def home():
 @app.route('/subtract/<int:x>/<int:y>')
 def subtract_route(x, y):
     result = subtract(x, y)
-    return f"The result of {x} - {y} is {result}"
+    return str(result)
 
 if __name__ == '__main__':
     app.run(debug=True)
